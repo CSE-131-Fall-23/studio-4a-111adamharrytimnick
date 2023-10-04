@@ -23,15 +23,15 @@ public class InterpretDrawingFile {
 		Scanner in = new Scanner(f); //making Scanner with a File
 		
 		String shape = in.next();
-		
+		StdDraw.setPenRadius(0.01);
 		int red = in.nextInt();
 		int green = in.nextInt();
 		int blue = in.nextInt();
-		int x = 0;
-		double[]newparameter = new double[x];
+		
+		
 		boolean fill = in.nextBoolean();
 		
-		if(shape == "ellipse") {
+		if(shape.equals("ellipse")) {
 			Color ellipse = new Color(red,green,blue);
 			StdDraw.setPenColor(ellipse);
 			double p1 = in.nextDouble();
@@ -43,7 +43,7 @@ public class InterpretDrawingFile {
 			}else {
 				StdDraw.ellipse(p1,p2,p3,p4);
 			}
-		}else if(shape == "rectangle") {
+		}else if(shape.equals("rectangle")) {
 			Color rectangle = new Color(red,green,blue);
 			StdDraw.setPenColor(rectangle);
 			double p1 = in.nextDouble();
